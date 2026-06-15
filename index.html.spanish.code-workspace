@@ -1,7 +1,55 @@
-{
-	"folders": [
-		{
-			"path": "."
-		}
-	]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spanish Sprint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Spanish Sprint 🇪🇸</h1>
+<p>Learn common Spanish words fast.</p>
+
+<div class="card">
+    <h2 id="english">Hello</h2>
+    <p id="spanish">Hola</p>
+    <button onclick="nextWord()">Next Word</button>
+</div>
+
+<script>
+const words = [
+    {en:"Hello", es:"Hola"},
+    {en:"Thank You", es:"Gracias"},
+    {en:"Good Morning", es:"Buenos días"},
+    {en:"Please", es:"Por favor"},
+    {en:"How are you?", es:"¿Cómo estás?"},
+    {en:"Goodbye", es:"Adiós"}
+];
+
+function nextWord() {
+    const word = words[Math.floor(Math.random() * words.length)];
+    document.getElementById("english").textContent = word.en;
+    document.getElementById("spanish").textContent = word.es;
 }
+</script>
+
+</body>
+</html>
